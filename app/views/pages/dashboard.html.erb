@@ -7,7 +7,10 @@
             <th><p>name</p></th>
 
 
-            <th><p>Rol</p></th>
+            <th><p>Change Rol</p></th>
+
+            <th><p>Final Rol</p></th>
+            <th> <p>Options</p> </th>
           </tr>
 
       </thead>
@@ -29,9 +32,16 @@
               </div>
 
             </td>
+            <td>
+              <%= user.role %>
+            </td>
+            <td>
+              <%= link_to 'Eliminar', user_path(user), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar el Usuario?' }, class: 'btn btn-sm btn-danger' %>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
+    <%= link_to 'Volver', posts_path, class: 'btn btn-default' %>
   </div>
 </div>

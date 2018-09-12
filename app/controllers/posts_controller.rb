@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   #permite cargar recursos mediante cancancan
   # load_resource
   # permite cargar y autorizar recursos
-    load_and_authorize_resource except: :new
+    load_and_authorize_resource except: [:new, :create]
     skip_authorization_check
 
 

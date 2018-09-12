@@ -9,5 +9,9 @@ class UserController < ApplicationController
       redirect_to dashboard_path, alert: 'No hemos podido procesar tu cambio'
     end
   end
-  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to dashboard_path
+  end
 end

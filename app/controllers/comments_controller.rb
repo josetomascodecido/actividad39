@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	load_and_authorize_resource
+	skip_authorization_check
 
 	def create
 		@post = Post.find(params[:post_id])
