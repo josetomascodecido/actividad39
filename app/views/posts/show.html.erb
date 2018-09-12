@@ -21,9 +21,11 @@
 						<%= f.text_area :content, placeholder: 'Escribe tu comentario aquí...', class: 'form-control' %>
 					</div>
 				</div>
+				<% if can? :create, Comment %>
 				<%= f.submit 'Comentar', class: 'btn btn-primary' %>
+				<% end	 %>
 			<% end %>
-			  
+
 		</div>
 	</div>
 	<div class="col-md-8">
