@@ -8,10 +8,13 @@ class Ability
 
       if user.admin?
         can :manage, :all
+      elsif user.visit?
+        can [:create, :destroy], Comment
+        can :destroy, Post, user_id: user.id
+        can :read, Post
       else
        can :read, Post
-       can :create, Comment
-       can :destroy, Post, user_id: user.id
+
       end
     #
     # The first argument to `can` is the action you are giving the user
