@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :user, only: :update
+
 	resources :posts do
 		resources :comments, only: [:create, :destroy]
 	end
+
+	get 'dashboard', to: 'pages#dashboard'
 
 	devise_for :users, controllers: {
 		sessions: 'users/sessions',

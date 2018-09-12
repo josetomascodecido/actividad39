@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-bordered">
+      <thead>
+
+          <tr>
+            <th><p>name</p></th>
+
+
+            <th><p>Rol</p></th>
+          </tr>
+
+      </thead>
+      <tbody>
+          <%  @users.each do |user| %>
+          <tr>
+            <td>
+              <%= user.name %>
+            </td>
+
+
+            <td>
+              <div class="form-group">
+                <label for="sel1"><%= form_with url: user_path(user), method: "patch" do |user_form| %></label>
+                <%= select_tag(:role, options_for_select([['admin', 'admin'] , ['visit', 'visit']])) %>
+                <%= user_form.submit %>
+                <% end %>
+
+              </div>
+
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
