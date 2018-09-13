@@ -28,7 +28,7 @@ load_and_authorize_resource :comment, :through => :post
 
 	private
 
-	def create_params
-    params.require(:comment).permit(:content)
-  end
+	# def create_params
+  #   params.require(:comment).permit(:content)
+  # end
 end
